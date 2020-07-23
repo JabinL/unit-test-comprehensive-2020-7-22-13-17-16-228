@@ -39,8 +39,13 @@ public class GuessNumber {
         return count;
     }
 
-    public boolean validInputNumber() {
-        System.out.println();
+    public boolean validInputNumber(int[] inputNumber) {
+        if(inputNumber.length<4 || inputNumber.length>4)
+        {
+            System.out.println();
+            return false;
+        }
+
         return true;
     }
 }

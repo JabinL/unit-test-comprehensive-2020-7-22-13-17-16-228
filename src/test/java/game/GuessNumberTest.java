@@ -107,7 +107,7 @@ public class GuessNumberTest {
         GuessNumber guessNumber = new GuessNumber(generator);
 
         //when
-         boolean isValid = guessNumber.validInputNumber();
+         boolean isValid = guessNumber.validInputNumber(inputNumber);
         //then
         assertEquals(false,isValid);
     }
