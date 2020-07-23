@@ -11,6 +11,16 @@ public class GuessNumber {
 
     public String guess(int[] inputNumber) {
 
+        boolean isAllCorrect = true;
+
+        for(int index = 0; index < inputNumber.length; index++){
+            if(inputNumber[index]!=answer[index]){
+                isAllCorrect = false;
+            }
+        }
+        if(isAllCorrect){
+            return "4A0B";
+        }
         return "null";
     }
 }
