@@ -14,13 +14,15 @@ public class GuessNumber {
         boolean isAllCorrect = true;
 
         for(int index = 0; index < inputNumber.length; index++){
-            if(inputNumber[index]!=answer[index]){
+            if(inputNumber[index]!= answer[index]){
                 isAllCorrect = false;
+                break;
             }
         }
         if(isAllCorrect){
             return "4A0B";
         }
-        return "null";
+
+        return "0A0B";
     }
 }
