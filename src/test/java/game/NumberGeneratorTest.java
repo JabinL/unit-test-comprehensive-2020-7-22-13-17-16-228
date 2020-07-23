@@ -35,4 +35,21 @@ public class NumberGeneratorTest {
         assertEquals(size,4);
     }
 
+    @Test
+    public void should_the_number_in_answer_between_0_and_9(){
+        //given
+        NumberGenerator numberGenerator = new NumberGenerator();
+        int[] answer = numberGenerator.generate();
+        boolean isConform = true;
+        //when
+        for(int index= 0 ; index < answer.length; index++){
+            if(answer[index]<0|| answer[index]>9){
+                isConform = false;
+                break;
+            }
+        }
+        //then
+        assertEquals(true,isConform);
+    }
+
 }
