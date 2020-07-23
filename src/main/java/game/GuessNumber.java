@@ -38,4 +38,9 @@ public class GuessNumber {
         count -= countNumberWithCorrectPisiton(inputNumber);
         return count;
     }
+
+    public boolean validInputNumber() {
+        System.out.println();
+        return true;
+    }
 }

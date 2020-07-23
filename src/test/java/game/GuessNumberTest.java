@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class GuessNumberTest {
 
@@ -96,5 +98,21 @@ public class GuessNumberTest {
         //then
         assertEquals("0A4B",result);
     }
+
+    @Test
+    public void should_print_tip_when_inputNumber_length_is_not_equal_4(){
+        //given
+        int[] inputNumber = {4,3,2};
+        Generator generator = new NumberGenerator();
+        GuessNumber guessNumber = new GuessNumber(generator);
+
+        //when
+         boolean isValid = guessNumber.validInputNumber();
+        //then
+        assertEquals(false,isValid);
+    }
+
+
+
 
 }
