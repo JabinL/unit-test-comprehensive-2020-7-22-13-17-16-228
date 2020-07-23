@@ -1,6 +1,7 @@
 package game;
 
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 public class GuessNumber {
@@ -58,5 +59,19 @@ public class GuessNumber {
             return  false;
         }
         return true;
+    }
+
+    public int[] input(){
+
+        Scanner sc=new Scanner(System.in);
+
+        String[] nums = null;
+        nums = sc.nextLine().split(" ");
+        int num[]=new int[nums.length];
+        for(int i=0;i<num.length;i++){
+            num[i]=Integer.valueOf(nums[i]);
+        }
+
+        return num;
     }
 }
