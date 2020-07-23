@@ -10,20 +10,9 @@ public class GuessNumber {
     }
 
     public String guess(int[] inputNumber) {
-
-        boolean isAllCorrect = true;
-
-        for (int index = 0; index < inputNumber.length; index++) {
-            if (inputNumber[index] != answer[index]) {
-                isAllCorrect = false;
-                break;
-            }
-        }
-        if (isAllCorrect) {
-            return "4A0B";
-        }
-
-        return "0A0B";
+        int countNumberWithCorrectPisiton = countNumberWithCorrectPisiton(inputNumber);
+        int countNumberOnlyWithCorrectAnswer = countNumberOnlyWithCorrectAnswer(inputNumber);
+        return String.format("%dA%dB",countNumberWithCorrectPisiton,countNumberOnlyWithCorrectAnswer);
     }
 
     public int countNumberWithCorrectPisiton(int[] inputNumber) {
