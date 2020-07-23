@@ -112,7 +112,18 @@ public class GuessNumberTest {
         assertEquals(false,isValid);
     }
 
+    @Test
+    public void should_print_tip_when_inputNumber_has_repeat_number(){
+        //given
+        int[] inputNumber = {1,1,3,4};
+        Generator generator = new NumberGenerator();
+        GuessNumber guessNumber = new GuessNumber(generator);
 
+        //when
+        boolean isValid = guessNumber.validInputNumber(inputNumber);
+        //then
+        assertEquals(false,isValid);
+    }
 
 
 }

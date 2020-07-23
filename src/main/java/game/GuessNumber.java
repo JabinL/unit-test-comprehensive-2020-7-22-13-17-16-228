@@ -1,5 +1,8 @@
 package game;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class GuessNumber {
 
     private int[] answer;
@@ -45,7 +48,15 @@ public class GuessNumber {
             System.out.println();
             return false;
         }
-
+        Set<Integer> set = new HashSet<>();
+        //when
+        for(int index= 0 ; index < inputNumber.length; index++){
+            set.add(inputNumber[index]);
+        }
+        int size = set.size();
+        if (size!=4){
+            return  false;
+        }
         return true;
     }
 }
