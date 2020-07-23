@@ -14,7 +14,7 @@ public class GuessNumberTest {
         int[] answer = {1,2,3,4};
         int[] inputNumber = {1,2,3,4};
         //stub
-        Generator numberGenerator = mock(NumberGenerator.class);
+        NumberGenerator numberGenerator = mock(NumberGenerator.class);
         when(numberGenerator.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when

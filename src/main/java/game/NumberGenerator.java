@@ -1,28 +1,26 @@
 package game;
 
 public class NumberGenerator implements Generator{
+
     @Override
     public int[] generate() {
-        int n = 4;
+        int size = 4;
         int max = 9;
         int min = 0;
         
-        if (n > (max - min + 1) || max < min) {
-            return null;
-        }
-        int[] answer = new int[n];
+        int[] answer = new int[size];
         int count = 0;
-        while(count < n) {
-            int num = (int) (Math.random() * (max - min)) + min;
+        while(count < size) {
+            int number = (int) (Math.random() * (max - min)) + min;
             boolean flag = true;
-            for (int j = 0; j < n; j++) {
-                if(num == answer[j]){
+            for (int j = 0; j < size; j++) {
+                if(number == answer[j]){
                     flag = false;
                     break;
                 }
             }
             if(flag){
-                answer[count] = num;
+                answer[count] = number;
                 count++;
             }
         }

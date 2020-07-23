@@ -1,6 +1,6 @@
 package game;
 
-public interface Generator {
+public interface  Generator {
 
-    int [] generate();
+     int [] generate();
 }
