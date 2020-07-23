@@ -53,5 +53,20 @@ public class GuessNumberTest {
         assertEquals("2A0B",result);
     }
 
+    @Test
+    public void should_return_0A2B_when_guess_given_inputNumber_2156(){
+        //given
+        int[] answer = {1,2,3,4};
+        int[] inputNumber = {2,1,5,6};
+        //stub
+        Generator numberGenerator = mock(NumberGenerator.class);
+        when(numberGenerator.generate()).thenReturn(answer);
+        GuessNumber guessNumber = new GuessNumber(numberGenerator);
+        //when
+        String result = guessNumber.guess(inputNumber);
+        //then
+        assertEquals("0A2B",result);
+    }
+
 
 }
