@@ -2,5 +2,5 @@ package game;
 
 public interface  Generator {
 
-     int [] generate();
+     int [] generateNumbers();
 }

@@ -17,7 +17,7 @@ public class GuessNumberTest {
         int[] inputNumber = {1,2,3,4};
         //stub
         NumberGenerator numberGenerator = mock(NumberGenerator.class);
-        when(numberGenerator.generate()).thenReturn(answer);
+        when(numberGenerator.generateNumbers()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
         String result = guessNumber.guess(inputNumber);
@@ -32,7 +32,7 @@ public class GuessNumberTest {
         int[] inputNumber = {5,6,7,8};
         //stub
         Generator numberGenerator = mock(NumberGenerator.class);
-        when(numberGenerator.generate()).thenReturn(answer);
+        when(numberGenerator.generateNumbers()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
         String result = guessNumber.guess(inputNumber);
@@ -47,7 +47,7 @@ public class GuessNumberTest {
         int[] inputNumber = {1,2,5,6};
         //stub
         Generator numberGenerator = mock(NumberGenerator.class);
-        when(numberGenerator.generate()).thenReturn(answer);
+        when(numberGenerator.generateNumbers()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
         String result = guessNumber.guess(inputNumber);
@@ -62,7 +62,7 @@ public class GuessNumberTest {
         int[] inputNumber = {2,1,5,6};
         //stub
         Generator numberGenerator = mock(NumberGenerator.class);
-        when(numberGenerator.generate()).thenReturn(answer);
+        when(numberGenerator.generateNumbers()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
         String result = guessNumber.guess(inputNumber);
@@ -76,7 +76,7 @@ public class GuessNumberTest {
         int[] inputNumber = {1,3,5,6};
         //stub
         Generator numberGenerator = mock(NumberGenerator.class);
-        when(numberGenerator.generate()).thenReturn(answer);
+        when(numberGenerator.generateNumbers()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
         String result = guessNumber.guess(inputNumber);
@@ -91,7 +91,7 @@ public class GuessNumberTest {
         int[] inputNumber = {4,3,2,1};
         //stub
         Generator numberGenerator = mock(NumberGenerator.class);
-        when(numberGenerator.generate()).thenReturn(answer);
+        when(numberGenerator.generateNumbers()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
         String result = guessNumber.guess(inputNumber);

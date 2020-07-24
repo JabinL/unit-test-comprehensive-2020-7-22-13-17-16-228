@@ -7,9 +7,19 @@ public class GuessNumber {
 
     private int[] answer;
     private Generator generator;
+    private int chances;
 
     public GuessNumber(Generator generator) {
-        this.answer = generator.generate();
+        this.chances = 6;
+        this.answer = generator.generateNumbers();
+    }
+
+    public int getChances() {
+        return chances;
+    }
+
+    public void setChances(int chances) {
+        this.chances = chances;
     }
 
     public String guess(int[] inputNumber) {
@@ -45,7 +55,7 @@ public class GuessNumber {
     public boolean validInputNumber(int[] inputNumber) {
         if(inputNumber.length<4 || inputNumber.length>4)
         {
-            System.out.println();
+            System.out.println("Wrong Input，Input again");
             return false;
         }
         Set<Integer> set = new HashSet<>();
@@ -55,6 +65,7 @@ public class GuessNumber {
         }
         int size = set.size();
         if (size!=4){
+            System.out.println(" Wrong Input，Input again");
             return  false;
         }
         return true;
