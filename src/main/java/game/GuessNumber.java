@@ -14,9 +14,9 @@ public class GuessNumber {
     }
 
     public String guess(int[] inputNumber) {
-        int countNumberWithCorrectPisiton = countNumberWithCorrectPisiton(inputNumber);
-        int countNumberOnlyWithCorrectAnswer = countNumberOnlyWithCorrectAnswer(inputNumber);
-        return String.format("%dA%dB",countNumberWithCorrectPisiton,countNumberOnlyWithCorrectAnswer);
+        int countA = countNumberWithCorrectPisiton(inputNumber);
+        int countB = countNumberOnlyWithCorrectAnswer(inputNumber);
+        return String.format("%dA%dB",countA,countB);
     }
 
     public int countNumberWithCorrectPisiton(int[] inputNumber) {
