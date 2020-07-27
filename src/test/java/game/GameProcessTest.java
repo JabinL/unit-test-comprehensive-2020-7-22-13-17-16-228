@@ -23,4 +23,20 @@ public class GameProcessTest {
         //then
         assertEquals("FAILED",gameState.getState());
     }
+    @Test
+    public void should_return_succeed_when_guess_given_result_4A0B(){
+
+        //given
+        int[] answer = {1,2,3,4};
+        int[] inputNumber = {1,5,6,7};
+        NumberGenerator numberGenerator = mock(NumberGenerator.class);
+        when(numberGenerator.generate()).thenReturn(answer);
+        GuessNumber guessNumber = new GuessNumber(numberGenerator);
+        GameProcess gameProcess = new GameProcess(guessNumber);
+        //when
+        GameState gameState = gameProcess.guess(inputNumber);
+
+        //then
+        assertEquals("SUCCEED",gameState.getState());
+    }
 }
