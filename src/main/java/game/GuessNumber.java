@@ -1,8 +1,6 @@
 package game;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class GuessNumber {
 
@@ -31,16 +29,17 @@ public class GuessNumber {
     }
 
     public int countB(int[] inputNumber) {
+        ArrayList<Integer> answerList = new ArrayList<>();
+        for( int answer: this.answer){
+            answerList.add(answer);
+        }
         int count = 0;
-        for (int indexOfInputNumber = 0; indexOfInputNumber < inputNumber.length; indexOfInputNumber++) {
-            for (int indexOfAnswer = 0; indexOfAnswer < answer.length; indexOfAnswer++) {
-                if (inputNumber[indexOfInputNumber] == answer[indexOfAnswer]) {
-                        ++count;
-                }
+        for( int number : inputNumber){
+            if(answerList.contains(number)){
+                count++;
             }
         }
-        count -= countA(inputNumber);
-        return count;
+        return count-countA(inputNumber);
     }
 
     public boolean validInputNumber(int[] inputNumber) {

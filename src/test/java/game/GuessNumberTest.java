@@ -87,7 +87,7 @@ public class GuessNumberTest {
     @Test
     public void should_return_0A4B_when_guess_given_inputNumber_4321(){
         //given
-        int[] answer = {2,2,3,4};
+        int[] answer = {1,2,3,4};
         int[] inputNumber = {4,3,2,1};
         //stub
         Generator numberGenerator = mock(NumberGenerator.class);
