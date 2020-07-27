@@ -39,4 +39,23 @@ public class GameProcessTest {
         //then
         assertEquals("SUCCEED",gameState.getState());
     }
+
+    @Test
+    public void should_return_game_over_when_guess_6_times_given_result_1A0B(){
+
+        //given
+        int[] answer = {1,2,3,4};
+        int[] inputNumber = {1,5,6,7};
+        NumberGenerator numberGenerator = mock(NumberGenerator.class);
+        when(numberGenerator.generate()).thenReturn(answer);
+        GuessNumber guessNumber = new GuessNumber(numberGenerator);
+        GameProcess gameProcess = new GameProcess(guessNumber);
+        gameProcess.setTimes(0);
+        //when
+        GameState gameState = gameProcess.guess(inputNumber);
+
+        //then
+        assertEquals("GAMEOVER",gameState.getState());
+    }
+
 }

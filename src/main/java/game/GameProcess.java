@@ -2,6 +2,7 @@ package game;
 
 public class GameProcess {
     private GuessNumber guessNumber;
+    private int times = 6;
     public GameProcess(GuessNumber guessNumber) {
         this.guessNumber = guessNumber;
     }
@@ -12,4 +13,10 @@ public class GameProcess {
         }
         return new GameState("SUCCEED");
     }
+
+    public void setTimes(int times) {
+        this.times = times;
+    }
+
+
 }
