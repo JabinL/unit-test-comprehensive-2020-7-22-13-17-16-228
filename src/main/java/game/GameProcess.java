@@ -8,6 +8,7 @@ public class GameProcess {
     }
 
     public GameState guess(int[] inpputNumber) {
+        setTimes(getTimes()-1);
         if(!guessNumber.guess(inpputNumber).equals("4A0B")&&getTimes()==0){
             return new GameState("GAMEOVER");
         }
