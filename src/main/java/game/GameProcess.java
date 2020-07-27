@@ -8,6 +8,9 @@ public class GameProcess {
     }
 
     public GameState guess(int[] inpputNumber) {
+        if(!guessNumber.guess(inpputNumber).equals("4A0B")&&getTimes()==0){
+            return new GameState("GAMEOVER");
+        }
         if(!guessNumber.guess(inpputNumber).equals("4A0B")){
             return new GameState("FAILED");
         }
@@ -18,5 +21,7 @@ public class GameProcess {
         this.times = times;
     }
 
-
+    public int getTimes(){
+        return this.times;
+    }
 }
