@@ -46,7 +46,7 @@ public class GuessNumber {
     public boolean validInputNumber(int[] inputNumber) {
         if(inputNumber.length<4 || inputNumber.length>4)
         {
-            System.out.println();
+            System.out.println("Wrong Input，Input again");
             return false;
         }
         Set<Integer> set = new HashSet<>();
