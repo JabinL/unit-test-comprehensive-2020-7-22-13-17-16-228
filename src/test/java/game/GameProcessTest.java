@@ -18,9 +18,9 @@ public class GameProcessTest {
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         GameProcess gameProcess = new GameProcess(guessNumber);
         //when
-        GameState gameState = gameProcess.guess();
+        GameState gameState = gameProcess.guess(inputNumber);
 
         //then
-        assertEquals("FAIlED",gameState.getState());
+        assertEquals("FAILED",gameState.getState());
     }
 }
