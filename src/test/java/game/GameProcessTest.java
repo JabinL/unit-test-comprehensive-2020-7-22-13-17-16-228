@@ -28,7 +28,7 @@ public class GameProcessTest {
 
         //given
         int[] answer = {1,2,3,4};
-        int[] inputNumber = {1,5,6,7};
+        int[] inputNumber = {1,2,3,4};
         NumberGenerator numberGenerator = mock(NumberGenerator.class);
         when(numberGenerator.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
