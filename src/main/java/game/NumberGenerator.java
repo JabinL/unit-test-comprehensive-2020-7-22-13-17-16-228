@@ -3,7 +3,7 @@ package game;
 public class NumberGenerator implements Generator{
 
     @Override
-    public int[] generateNumbers() {
+    public int[] generate() {
         int size = 4;
         int max = 9;
         int min = 0;
