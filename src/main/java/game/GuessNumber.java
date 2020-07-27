@@ -1,6 +1,7 @@
 package game;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class GuessNumber {
 
@@ -29,10 +30,7 @@ public class GuessNumber {
     }
 
     public int countB(int[] inputNumber) {
-        ArrayList<Integer> answerList = new ArrayList<>();
-        for( int answer: this.answer){
-            answerList.add(answer);
-        }
+        ArrayList<Integer> answerList = (ArrayList<Integer>) Arrays.stream(this.answer).boxed().collect(Collectors.toList());
         int count = 0;
         for( int number : inputNumber){
             if(answerList.contains(number)){
