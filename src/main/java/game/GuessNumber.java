@@ -14,12 +14,12 @@ public class GuessNumber {
     }
 
     public String guess(int[] inputNumber) {
-        int countA = countNumberWithCorrectPisiton(inputNumber);
-        int countB = countNumberOnlyWithCorrectAnswer(inputNumber);
+        int countA = countA(inputNumber);
+        int countB = countB(inputNumber);
         return String.format("%dA%dB",countA,countB);
     }
 
-    public int countNumberWithCorrectPisiton(int[] inputNumber) {
+    public int countA(int[] inputNumber) {
         int count = 0;
         for (int index = 0; index < inputNumber.length; index++) {
             if (answer[index] == inputNumber[index]) {
@@ -30,7 +30,7 @@ public class GuessNumber {
         return count;
     }
 
-    public int countNumberOnlyWithCorrectAnswer(int[] inputNumber) {
+    public int countB(int[] inputNumber) {
         int count = 0;
         for (int indexOfInputNumber = 0; indexOfInputNumber < inputNumber.length; indexOfInputNumber++) {
             for (int indexOfAnswer = 0; indexOfAnswer < answer.length; indexOfAnswer++) {
@@ -39,7 +39,7 @@ public class GuessNumber {
                 }
             }
         }
-        count -= countNumberWithCorrectPisiton(inputNumber);
+        count -= countA(inputNumber);
         return count;
     }
 
