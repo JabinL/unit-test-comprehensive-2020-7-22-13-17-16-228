@@ -15,7 +15,7 @@ public class GuessNumber {
     public String guess(int[] inputNumber) {
         int countA = countA(inputNumber);
         int countB = countB(inputNumber);
-        return String.format("%dA%dB",countA,countB);
+        return String.format("%dA%dB", countA, countB);
     }
 
     public int countA(int[] inputNumber) {
@@ -32,41 +32,61 @@ public class GuessNumber {
     public int countB(int[] inputNumber) {
         ArrayList<Integer> answerList = (ArrayList<Integer>) Arrays.stream(this.answer).boxed().collect(Collectors.toList());
         int count = 0;
-        for( int number : inputNumber){
-            if(answerList.contains(number)){
+        for (int number : inputNumber) {
+            if (answerList.contains(number)) {
                 count++;
             }
         }
-        return count-countA(inputNumber);
+        return count - countA(inputNumber);
     }
 
     public boolean validInputNumber(int[] inputNumber) {
-        if(inputNumber.length<4 || inputNumber.length>4)
-        {
-            System.out.println();
+
+        if (validLengthOfInputNumber(inputNumber) && validRangeOfInputNumber(inputNumber) && isNotHaveReapeatNumberInInputNumber(inputNumber)) {
+            return true;
+        }
+        System.out.println("Wrong Input，Input again");
+        return false;
+    }
+
+    public boolean validLengthOfInputNumber(int[] inputNumber) {
+        if (inputNumber.length < 4 || inputNumber.length > 4) {
             return false;
-        }
-        Set<Integer> set = new HashSet<>();
-        //when
-        for(int index= 0 ; index < inputNumber.length; index++){
-            set.add(inputNumber[index]);
-        }
-        int size = set.size();
-        if (size!=4){
-            return  false;
         }
         return true;
     }
 
-    public int[] input(){
+    public boolean isNotHaveReapeatNumberInInputNumber(int[] inputNumber) {
+        Set<Integer> set = new HashSet<>();
 
-        Scanner sc=new Scanner(System.in);
+        for (int index = 0; index < inputNumber.length; index++) {
+            set.add(inputNumber[index]);
+        }
+        int size = set.size();
+        if (size != 4) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean validRangeOfInputNumber(int[] inputNumber) {
+        for (int index = 0; index < inputNumber.length; index++) {
+            if (inputNumber[index] < 0 || inputNumber[index] > 9) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int[] input() {
+
+        Scanner sc = new Scanner(System.in);
 
         String[] nums = null;
         nums = sc.nextLine().split(" ");
-        int num[]=new int[nums.length];
-        for(int i=0;i<num.length;i++){
-            num[i]=Integer.valueOf(nums[i]);
+        int num[] = new int[nums.length];
+        for (int i = 0; i < num.length; i++) {
+            num[i] = Integer.valueOf(nums[i]);
         }
 
         return num;
