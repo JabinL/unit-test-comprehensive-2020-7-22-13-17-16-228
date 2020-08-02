@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 public class GuessNumber {
 
     private int[] answer;
-    private Generator generator;
+    private NumberGenerator generator;
 
-    public GuessNumber(Generator generator) {
+    public GuessNumber(NumberGenerator generator) {
         this.answer = generator.generate();
     }
 

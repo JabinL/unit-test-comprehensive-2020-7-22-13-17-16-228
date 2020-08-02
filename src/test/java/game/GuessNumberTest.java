@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 public class GuessNumberTest {
 
@@ -16,9 +14,9 @@ public class GuessNumberTest {
         int[] answer = {1, 2, 3, 4};
         int[] inputNumber = {1, 2, 3, 4};
         //stub
-        NumberGenerator numberGenerator = mock(NumberGenerator.class);
-        when(numberGenerator.generate()).thenReturn(answer);
-        GuessNumber guessNumber = new GuessNumber(numberGenerator);
+        RandomNumberGenerator randomNumberGenerator = mock(RandomNumberGenerator.class);
+        when(randomNumberGenerator.generate()).thenReturn(answer);
+        GuessNumber guessNumber = new GuessNumber(randomNumberGenerator);
         //when
         String result = guessNumber.guess(inputNumber);
         //then
@@ -31,7 +29,7 @@ public class GuessNumberTest {
         int[] answer = {1, 2, 3, 4};
         int[] inputNumber = {5, 6, 7, 8};
         //stub
-        Generator numberGenerator = mock(NumberGenerator.class);
+        NumberGenerator numberGenerator = mock(RandomNumberGenerator.class);
         when(numberGenerator.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
@@ -46,7 +44,7 @@ public class GuessNumberTest {
         int[] answer = {1, 2, 3, 4};
         int[] inputNumber = {1, 2, 5, 6};
         //stub
-        Generator numberGenerator = mock(NumberGenerator.class);
+        NumberGenerator numberGenerator = mock(RandomNumberGenerator.class);
         when(numberGenerator.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
@@ -61,7 +59,7 @@ public class GuessNumberTest {
         int[] answer = {1, 2, 3, 4};
         int[] inputNumber = {2, 1, 5, 6};
         //stub
-        Generator numberGenerator = mock(NumberGenerator.class);
+        NumberGenerator numberGenerator = mock(RandomNumberGenerator.class);
         when(numberGenerator.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
@@ -76,7 +74,7 @@ public class GuessNumberTest {
         int[] answer = {1, 2, 3, 4};
         int[] inputNumber = {1, 3, 5, 6};
         //stub
-        Generator numberGenerator = mock(NumberGenerator.class);
+        NumberGenerator numberGenerator = mock(RandomNumberGenerator.class);
         when(numberGenerator.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when
@@ -91,7 +89,7 @@ public class GuessNumberTest {
         int[] answer = {1, 2, 3, 4};
         int[] inputNumber = {4, 3, 2, 1};
         //stub
-        Generator numberGenerator = mock(NumberGenerator.class);
+        NumberGenerator numberGenerator = mock(RandomNumberGenerator.class);
         when(numberGenerator.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(numberGenerator);
         //when

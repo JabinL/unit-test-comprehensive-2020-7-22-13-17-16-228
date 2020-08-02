@@ -12,8 +12,8 @@ public class NumberGeneratorTest {
     @Test
     public void should_the_size_of_answer_is_4() {
         //given
-        NumberGenerator numberGenerator = new NumberGenerator();
-        int[] answer = numberGenerator.generate();
+        RandomNumberGenerator ramdonNumberGenerator = new RandomNumberGenerator();
+        int[] answer = ramdonNumberGenerator.generate();
         //when
         int size = answer.length;
         //then
@@ -23,8 +23,8 @@ public class NumberGeneratorTest {
     @Test
     public void should_the_answer_do_not_have_repeat_number() {
         //given
-        NumberGenerator numberGenerator = new NumberGenerator();
-        int[] answer = numberGenerator.generate();
+        RandomNumberGenerator ramdonNumberGenerator = new RandomNumberGenerator();
+        int[] answer = ramdonNumberGenerator.generate();
         Set<Integer> set = new HashSet<>();
         //when
         for (int index = 0; index < answer.length; index++) {
@@ -38,8 +38,8 @@ public class NumberGeneratorTest {
     @Test
     public void should_the_number_in_answer_between_0_and_9() {
         //given
-        NumberGenerator numberGenerator = new NumberGenerator();
-        int[] answer = numberGenerator.generate();
+        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
+        int[] answer = randomNumberGenerator.generate();
         boolean isConform = true;
         //when
         for (int index = 0; index < answer.length; index++) {
