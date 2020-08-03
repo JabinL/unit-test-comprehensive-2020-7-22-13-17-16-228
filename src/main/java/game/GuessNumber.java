@@ -39,24 +39,23 @@ public class GuessNumber {
         }
         return count - countA(inputNumber);
     }
-    //TODO
     public boolean validInputNumber(int[] inputNumber) {
 
-        if (validLengthOfInputNumber(inputNumber) && validRangeOfInputNumber(inputNumber) && isNotHaveReapeatNumberInInputNumber(inputNumber)) {
+        if (validLength(inputNumber) && validRange(inputNumber) && isNotHaveReapeatNumber(inputNumber)) {
             return true;
         }
         System.out.println("Wrong Input，Input again");
         return false;
     }
 
-    public boolean validLengthOfInputNumber(int[] inputNumber) {
+    public boolean validLength(int[] inputNumber) {
         if (inputNumber.length < 4 || inputNumber.length > 4) {
             return false;
         }
         return true;
     }
 
-    public boolean isNotHaveReapeatNumberInInputNumber(int[] inputNumber) {
+    public boolean isNotHaveReapeatNumber(int[] inputNumber) {
         Set<Integer> set = new HashSet<>();
 
         for (int index = 0; index < inputNumber.length; index++) {
@@ -69,7 +68,7 @@ public class GuessNumber {
         return true;
     }
 
-    public boolean validRangeOfInputNumber(int[] inputNumber) {
+    public boolean validRange(int[] inputNumber) {
         for (int index = 0; index < inputNumber.length; index++) {
             if (inputNumber[index] < 0 || inputNumber[index] > 9) {
                 return false;
