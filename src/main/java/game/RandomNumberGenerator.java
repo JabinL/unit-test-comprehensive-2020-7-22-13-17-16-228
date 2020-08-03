@@ -5,18 +5,18 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class RandomNumberGenerator implements NumberGenerator {
-
+    public static final int SIZE = 4;
+    public static final int  MAX = 9;
+    public static final int MIN = 0;
     @Override
     public int[] generate() {
-        int size = 4;
-        int max = 9;
-        int min = 0;
+
         Set<Integer> answerSet = new HashSet<>();
-        int[] answer = new int[size];
+        int[] answer = new int[SIZE];
         while(true) {
-            int number = (int) (Math.random() * (max - min+1)) + min;
+            int number = (int) (Math.random() * (MAX - MIN +1)) + MIN;
             answerSet.add(number);
-            if(answerSet.size() == size){
+            if(answerSet.size() == SIZE){
                 break;
             }
         }

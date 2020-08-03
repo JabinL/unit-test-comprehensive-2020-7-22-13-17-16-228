@@ -39,7 +39,7 @@ public class GuessNumber {
         }
         return count - countA(inputNumber);
     }
-
+    //TODO
     public boolean validInputNumber(int[] inputNumber) {
 
         if (validLengthOfInputNumber(inputNumber) && validRangeOfInputNumber(inputNumber) && isNotHaveReapeatNumberInInputNumber(inputNumber)) {
